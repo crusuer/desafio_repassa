@@ -19,13 +19,13 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: desafio_repassa
-  password: Quantica1
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>  
 
 development:
   <<: *default
   database: desafio_repassa_development
+  username: desafio_repassa
+  password: Quantica1
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,6 +60,8 @@ development:
 test:
   <<: *default
   database: desafio_repassa_test
+  username: desafio_repassa
+  password: Quantica1
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,6 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: desafio_repassa_production
-  username: desafio_repassa
-  password: <%= ENV['DESAFIO_REPASSA_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

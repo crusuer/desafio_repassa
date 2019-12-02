@@ -1,7 +1,13 @@
-<h1>Sistema de avalia&ccedil;&otilde;es</h1>
-<% if current_employee %>
-    <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %>
-<% else %>
-    <%= link_to 'Sign up', new_employee_registration_path %>
-    <%= link_to 'Sign in', new_employee_session_path %>
-<% end %>
+<%= render 'menu' %>
+
+<div class="container mt-4">
+    <h1>Sistema de avalia&ccedil;&otilde;es</h1>
+    <% if current_employee %>
+        <p>Bem-vindo(a), ao sistema de avalia&ccedil;&otilde;es, utilize o menu acima para navegar entre as op&ccedil;&otilde;es.</p>
+    <% else %>
+        <p> Usu&aacute;rio anonimo.</p>
+        <p> Entre no sistema ou realize o Cadastro: </p>
+        <%= link_to 'Entrar', new_employee_session_path %><br/>
+        <%= link_to 'Cadastrar', new_employee_registration_path %>
+    <% end %>
+</div>

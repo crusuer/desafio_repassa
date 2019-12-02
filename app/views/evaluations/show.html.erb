@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Rated:</strong>
+  <strong>Avaliado:</strong>
   <%= @evaluation.rated.email %>
 </p>
 
 <p>
-  <strong>Rater:</strong>
+  <strong>Avaliador:</strong>
   <%= @evaluation.rater.email %>
 </p>
 
 <p>
-  <strong>Helpful:</strong>
+  <strong>Coopera&ccedil;&atilde;o:</strong>
   <%= @evaluation.helpful %>
 </p>
 
 <p>
-  <strong>Focused:</strong>
+  <strong>Foco:</strong>
   <%= @evaluation.focused %>
 </p>
 
 <p>
-  <strong>Responsible:</strong>
+  <strong>Reponsabilidade:</strong>
   <%= @evaluation.responsible %>
 </p>
 
 <p>
-  <strong>Creative:</strong>
+  <strong>Criativade:</strong>
   <%= @evaluation.creative %>
 </p>
 
 <p>
-  <strong>Leadership:</strong>
+  <strong>Lideran&ccedil;a:</strong>
   <%= @evaluation.leadership %>
 </p>
 
-<%= link_to 'Edit', edit_evaluation_path(@evaluation) %> |
-<%= link_to 'Back', evaluations_path %>
+<%= link_to 'Editar', edit_evaluation_path(@evaluation) %> |
+<%= link_to 'Voltar', evaluations_path %>

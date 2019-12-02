@@ -12,41 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :rated_id %>
+    <%= form.label 'Avaliado' %>
     <%= form.text_field :rated_id %>
   </div>
 
   <div class="field">
-    <%= form.label :rater_id %>
+    <%= form.label 'Avaliador' %>
     <%= form.text_field :rater_id %>
   </div>
 
   <div class="field">
-    <%= form.label :helpful %>
-    <%= form.number_field :helpful %>
+    <%= form.label 'Cooperacao' %>
+    <%= form.number_field :helpful, in: 0...6 %>
   </div>
 
   <div class="field">
-    <%= form.label :focused %>
-    <%= form.number_field :focused %>
+    <%= form.label 'Foco' %>
+    <%= form.number_field :focused, in: 0...6 %>
   </div>
 
   <div class="field">
-    <%= form.label :responsible %>
-    <%= form.number_field :responsible %>
+    <%= form.label 'Responsabilidade' %>
+    <%= form.number_field :responsible, in: 0...6 %>
   </div>
 
   <div class="field">
-    <%= form.label :creative %>
-    <%= form.number_field :creative %>
+    <%= form.label 'Criatividade' %>
+    <%= form.number_field :creative, in: 0...6 %>
   </div>
 
   <div class="field">
-    <%= form.label :leadership %>
-    <%= form.number_field :leadership %>
+    <%= form.label 'Lideranca' %>
+    <%= form.number_field :leadership, in: 0...6 %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Criar' %>
   </div>
 <% end %>
