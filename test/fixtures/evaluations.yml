@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rated: one
+  rater: one
+  helpful: 1
+  focused: 1
+  responsible: 1
+  creative: 1
+  leadership: 1
+
+two:
+  rated: two
+  rater: two
+  helpful: 1
+  focused: 1
+  responsible: 1
+  creative: 1
+  leadership: 1
