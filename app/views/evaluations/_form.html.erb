@@ -1,52 +1,83 @@
-<%= form_with(model: evaluation, local: true) do |form| %>
-  <% if evaluation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(evaluation.errors.count, "error") %> prohibited this evaluation from being saved:</h2>
+<div class="container">
+  <%= form_with(model: evaluation, local: true) do |form| %>
+    <% if evaluation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(evaluation.errors.count, "error") %> prohibited this evaluation from being saved:</h2>
 
-      <ul>
-        <% evaluation.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% evaluation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="table table-sm">
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Avaliado' %>
+        </div>
+        <div class="col">
+          <%= form.text_field :rated_id %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Avaliador' %>
+        </div>
+        <div class="col">
+          <%= form.text_field :rater_id %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Cooperacao' %>
+        </div>
+        <div class="col">
+          <%= form.number_field :helpful, in: 0...6 %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Foco' %>
+        </div>
+        <div class="col">
+          <%= form.number_field :focused, in: 0...6 %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Responsabilidade' %>
+        </div>
+        <div class="col">
+          <%= form.number_field :responsible, in: 0...6 %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Criatividade' %>
+        </div>
+        <div class="col">
+          <%= form.number_field :creative, in: 0...6 %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <%= form.label 'Lideranca' %>
+        </div>
+        <div class="col">
+          <%= form.number_field :leadership, in: 0...6 %>
+        </div>
+      </div>      
+    </div>
+    <div class="actions">
+      <%= form.submit 'Gravar' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label 'Avaliado' %>
-    <%= form.text_field :rated_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Avaliador' %>
-    <%= form.text_field :rater_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Cooperacao' %>
-    <%= form.number_field :helpful, in: 0...6 %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Foco' %>
-    <%= form.number_field :focused, in: 0...6 %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Responsabilidade' %>
-    <%= form.number_field :responsible, in: 0...6 %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Criatividade' %>
-    <%= form.number_field :creative, in: 0...6 %>
-  </div>
-
-  <div class="field">
-    <%= form.label 'Lideranca' %>
-    <%= form.number_field :leadership, in: 0...6 %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Criar' %>
-  </div>
-<% end %>
+</div>

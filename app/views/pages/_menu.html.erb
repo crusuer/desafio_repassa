@@ -1,22 +1,24 @@
 <% if current_employee %>    
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/">In&iacute;cio</a>
-      </li>
-      <% if current_employee %> 
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-
+          <a class="nav-link" href="/">In&iacute;cio</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<%= evaluations_path %>">Avalia&ccedil;&otilde;es</a>
-        </li>
-      <% end %> 
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <%= link_to 'Sair', destroy_employee_session_path, method: :delete %>
-    </form>
-  </div>
-</nav>
+        <% if current_employee.admin? %> 
+          <li class="nav-item">
+            <a class="nav-link" href="<%= employees_path %>">Funcion&aacute;rios</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="<%= evaluations_path %>">Avalia&ccedil;&otilde;es</a>
+          </li>
+        <% else %>
+          
+        <% end %> 
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <%= link_to 'Sair', destroy_employee_session_path, method: :delete %>
+      </form>
+    </div>
+  </nav>
 <% end %>
